@@ -1,8 +1,6 @@
 using APIAlamoAnclaflex.Models.Response;
 using APIAlamoAnclaflex.Services;
-using APIAlamoAnclaflex.Models.Response;
 using APIAlamoAnclaflex.Repositories;
-using APIAlamoAnclaflex.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -17,9 +15,9 @@ namespace APIAlamoAnclaflex.Controllers
     public class PedidosController : ControllerBase
     {
 
-        private readonly ILogger<PedidosController> Logger;
+        private Serilog.ILogger Logger { get; set; }
 
-        public PedidosController(ILogger<PedidosController> logger, PedidosRepository repository, IConfiguration configuration)
+        public PedidosController(Serilog.ILogger logger, PedidosRepository repository, IConfiguration configuration)
         {
             Logger = logger;
             Repository = repository;
@@ -34,6 +32,11 @@ namespace APIAlamoAnclaflex.Controllers
         {
             List<ComprobanteResponse> response = new List<ComprobanteResponse>();
             bool dioError = false;
+
+            var ControllerName = "Pedidos";
+            string JsonBody = JsonConvert.SerializeObject(payload);
+            Logger.Information("{ControllerName} - Body recibido: {JsonBody}", ControllerName, JsonBody);
+
 
             foreach (PedidoDTO pedido in payload.pedidos)
             {
@@ -71,6 +74,9 @@ namespace APIAlamoAnclaflex.Controllers
                     response.Add(new ComprobanteResponse(new ComprobanteDTO(pedido.MSNroAplica.ToString(), "200", "OK", errorMessage, null)));
                 };
             }
+
+            JsonBody = JsonConvert.SerializeObject(response);
+            Logger.Information("{ControllerName} - Respuesta: {JsonBody}", ControllerName, JsonBody);
 
             if (dioError)
             {

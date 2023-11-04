@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using APIAlamoAnclaflex.Models.Response;
+using Newtonsoft.Json;
+using System.Text.Json.Nodes;
 
 namespace APIAlamoAnclaflex.Exceptions
 {
@@ -26,9 +28,8 @@ namespace APIAlamoAnclaflex.Exceptions
                 "Error interno", 
                 errorMessage, 
                 null  ));
-
-
             context.Result = new ObjectResult(response);
+
             context.HttpContext.Response.StatusCode =
                         (int)HttpStatusCode.InternalServerError;
 

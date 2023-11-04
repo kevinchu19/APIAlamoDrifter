@@ -33,8 +33,22 @@
             "$type": "APIAlamoAnclaflex.Services.Entities.FieldValue, APIAlamoAnclaflex",
             "Field": "SAR_FCRMVH_CIRCOM",
             "PropertyName": null,
-            "FixedValue": "0300",
-            "Function": null
+            "FixedValue": null,
+            "Function": {
+              "$type": "APIAlamoAnclaflex.Services.Entities.FieldFunction, APIAlamoAnclaflex",
+              "Name": "Alm_Fnc_Ins_SarFcrmvh_DefinoCircuitoOrigen",
+              "Parameters": {
+                "$type": "System.Collections.Generic.List`1[[APIAlamoAnclaflex.Services.Entities.FunctionParameters, APIAlamoAnclaflex]], mscorlib",
+                "$values": [
+                  {
+                    "Name": "CodigoExterno",
+                    "PropertyName": "MSCodAuxiliarERP1"
+                  }
+                ]
+
+              }
+            }
+
           },
           {
             "$type": "APIAlamoAnclaflex.Services.Entities.FieldValue, APIAlamoAnclaflex",

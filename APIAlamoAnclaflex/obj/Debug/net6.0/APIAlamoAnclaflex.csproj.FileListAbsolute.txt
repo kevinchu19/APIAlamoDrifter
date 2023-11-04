@@ -66,3 +66,10 @@ C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\obj\Debug\net6.0
 C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\obj\Debug\net6.0\APIAlamoAnclaflex.pdb
 C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\obj\Debug\net6.0\APIAlamoAnclaflex.genruntimeconfig.cache
 C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\obj\Debug\net6.0\ref\APIAlamoAnclaflex.dll
+C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\bin\Debug\net6.0\Services\FieldMapFiles\Recepciones.json
+C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\obj\Debug\net6.0\APIAlamoAnclaflex.Properties.Resources.resources
+C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\obj\Debug\net6.0\APIAlamoAnclaflex.csproj.GenerateResource.cache
+C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
+C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\bin\Debug\net6.0\Serilog.dll
+C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\bin\Debug\net6.0\Serilog.Sinks.MSSqlServer.dll
+C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\bin\Debug\net6.0\Serilog.Sinks.PeriodicBatching.dll

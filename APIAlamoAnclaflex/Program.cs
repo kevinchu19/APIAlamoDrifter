@@ -1,13 +1,46 @@
 using APIAlamoAnclaflex.Exceptions;
 using APIAlamoAnclaflex.Repositories;
+using Serilog;
+using Serilog.Sinks.MSSqlServer;
+using System.Collections.ObjectModel;
+using System.Data;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
+
 
 // Add services to the container.
 
 //Repositorys
 builder.Services.AddScoped<PedidosRepository>();
+builder.Services.AddScoped<RecepcionesRepository>();
+
+var columnOptions = new ColumnOptions
+{
+    AdditionalColumns = new Collection<SqlColumn>
+    {
+        new SqlColumn
+            {ColumnName = "ControllerName", DataType = SqlDbType.NVarChar, NonClusteredIndex = true},
+        new SqlColumn
+            {ColumnName = "JsonBody", DataType = SqlDbType.NVarChar, NonClusteredIndex = true}
+    }
+};
+
+builder.Services.AddSingleton<Serilog.ILogger>(options =>
+{
+    var connstring = builder.Configuration["Serilog:ConnectionString"];
+    var tableName = builder.Configuration["Serilog:TableName"];
+
+    return new LoggerConfiguration()
+                .WriteTo
+                .MSSqlServer(
+                    connectionString: connstring,
+                    columnOptions: columnOptions,
+                    sinkOptions: new MSSqlServerSinkOptions { TableName = tableName, AutoCreateSqlTable = true },
+                    restrictedToMinimumLevel: Serilog.Events.LogEventLevel.Information)
+                .CreateLogger();
+
+});
 //Filtro de Excepcion
 builder.Services.AddMvc(Options =>
 {

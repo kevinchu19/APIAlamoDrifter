@@ -2,6 +2,7 @@ C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\obj\Release\net6
 C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\obj\Release\net6.0\PubTmp\Out\appsettings.Development.json
 C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\obj\Release\net6.0\PubTmp\Out\appsettings.json
 C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\obj\Release\net6.0\PubTmp\Out\Services\FieldMapFiles\Pedidos.json
+C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\obj\Release\net6.0\PubTmp\Out\Services\FieldMapFiles\Recepciones.json
 C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\obj\Release\net6.0\PubTmp\Out\APIAlamoAnclaflex.dll
 C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\obj\Release\net6.0\PubTmp\Out\APIAlamoAnclaflex.deps.json
 C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\obj\Release\net6.0\PubTmp\Out\APIAlamoAnclaflex.runtimeconfig.json
@@ -10,6 +11,7 @@ C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\obj\Release\net6
 C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\obj\Release\net6.0\PubTmp\Out\Azure.Identity.dll
 C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\obj\Release\net6.0\PubTmp\Out\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\obj\Release\net6.0\PubTmp\Out\Microsoft.Data.SqlClient.dll
+C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\obj\Release\net6.0\PubTmp\Out\Microsoft.Extensions.Configuration.dll
 C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\obj\Release\net6.0\PubTmp\Out\Microsoft.Identity.Client.dll
 C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\obj\Release\net6.0\PubTmp\Out\Microsoft.Identity.Client.Extensions.Msal.dll
 C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\obj\Release\net6.0\PubTmp\Out\Microsoft.IdentityModel.Abstractions.dll
@@ -22,6 +24,9 @@ C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\obj\Release\net6
 C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\obj\Release\net6.0\PubTmp\Out\Microsoft.SqlServer.Server.dll
 C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\obj\Release\net6.0\PubTmp\Out\Microsoft.Win32.SystemEvents.dll
 C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\obj\Release\net6.0\PubTmp\Out\Newtonsoft.Json.dll
+C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\obj\Release\net6.0\PubTmp\Out\Serilog.dll
+C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\obj\Release\net6.0\PubTmp\Out\Serilog.Sinks.MSSqlServer.dll
+C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\obj\Release\net6.0\PubTmp\Out\Serilog.Sinks.PeriodicBatching.dll
 C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
