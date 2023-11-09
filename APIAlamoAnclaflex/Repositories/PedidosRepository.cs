@@ -4,7 +4,7 @@ namespace APIAlamoAnclaflex.Repositories
 {
     public class PedidosRepository : RepositoryBase
     {
-        public PedidosRepository(IConfiguration configuration) : base(configuration)
+        public PedidosRepository(IConfiguration configuration, Serilog.ILogger logger) : base(configuration, logger)
         {
         }
 

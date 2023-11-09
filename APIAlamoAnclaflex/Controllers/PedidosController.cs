@@ -7,6 +7,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.Reflection;
 using APIAlamoAnclaflex.Models.Pedidos;
+using System.Globalization;
 
 namespace APIAlamoAnclaflex.Controllers
 {
@@ -66,12 +67,12 @@ namespace APIAlamoAnclaflex.Controllers
                 if (errorMessage != "")
                 {
                     dioError = true;
-                    response.Add(new ComprobanteResponse(new ComprobanteDTO(pedido.MSNroAplica.ToString(), "400", "Bad Request", errorMessage, null)));
+                    response.Add(new ComprobanteResponse(new ComprobanteDTO(Convert.ToString(pedido.MSNroAplica, CultureInfo.CreateSpecificCulture("en-GB")), "400", "Bad Request", errorMessage, null)));
                     
                 }
                 else 
                 { 
-                    response.Add(new ComprobanteResponse(new ComprobanteDTO(pedido.MSNroAplica.ToString(), "200", "OK", errorMessage, null)));
+                    response.Add(new ComprobanteResponse(new ComprobanteDTO(Convert.ToString(pedido.MSNroAplica, CultureInfo.CreateSpecificCulture("en-GB")), "200", "OK", errorMessage, null)));
                 };
             }
 

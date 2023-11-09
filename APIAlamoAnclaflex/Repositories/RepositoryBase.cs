@@ -4,6 +4,7 @@ using Microsoft.Data.SqlClient;
 using System.Collections;
 using System.Configuration;
 using System.Data;
+using System.Globalization;
 using System.Reflection;
 using System.Transactions;
 
@@ -11,12 +12,14 @@ namespace APIAlamoAnclaflex.Repositories
 {
     public class RepositoryBase
     {
-        public RepositoryBase(IConfiguration configuration)
+        public RepositoryBase(IConfiguration configuration, Serilog.ILogger logger)
         {
             Configuration = configuration;
+            Logger = logger;
         }
 
         public IConfiguration Configuration { get; }
+        public Serilog.ILogger Logger { get; }
 
         public async Task<string> ExecuteSqlInsertToTablaSAR(List<FieldMap> fieldMapList, object resource, object valorIdentificador, string jobName)
         {
@@ -47,6 +50,7 @@ namespace APIAlamoAnclaflex.Repositories
                     await connection.OpenAsync();
                     try
                     {
+                        Logger.Information(query);
                         await command.ExecuteNonQueryAsync();
 
                         //await InsertaCwJmSchedules(jobName);
@@ -137,7 +141,7 @@ namespace APIAlamoAnclaflex.Repositories
                     decimal number;
                     if (decimal.TryParse(Convert.ToString(value), out number))
                     {
-                        return Convert.ToString(value);
+                        return Convert.ToString(value, CultureInfo.CreateSpecificCulture("en-GB"));
                     }
 
                 
@@ -151,28 +155,36 @@ namespace APIAlamoAnclaflex.Repositories
 
             if (item.Function!=null)
             {
-                string script = $"(SELECT dbo.{item.Function.Name} ('";
 
-                foreach (var parameter in item.Function.Parameters)
+                string script = $"(SELECT dbo.{item.Function.Name}";
+
+                if (item.Function.Parameters.Count>0)
                 {
-                    if (parameter.FixedValue != null)
+                    script += "(";
+                    foreach (var parameter in item.Function.Parameters)
                     {
-                        script += $"{FormatStringSql(parameter.FixedValue)},";
-                    }
-                    else
-                    {
-                        try
+                        if (parameter.FixedValue != null)
                         {
-                            script += $"{resource.GetType().GetProperty(parameter.PropertyName).GetValue(resource, null)}',";
+                            script += $"{FormatStringSql(parameter.FixedValue)},";
                         }
-                        catch (Exception)
+                        else
                         {
-                            //Si no existe la propiedad en el objeto de items, busco en el del padre
-                            script += $"{parentResource.GetType().GetProperty(parameter.PropertyName).GetValue(parentResource, null)}',";
+                            try
+                            {
+                                script += $"'{resource.GetType().GetProperty(parameter.PropertyName).GetValue(resource, null)}',";
+                            }
+                            catch (Exception)
+                            {
+                                //Si no existe la propiedad en el objeto de items, busco en el del padre
+                                script += $"'{parentResource.GetType().GetProperty(parameter.PropertyName).GetValue(parentResource, null)}',";
+                            }
                         }
                     }
+                    script = script.Remove(script.Length - 1, 1);
+                    script += ")";
+
                 }
-                script = script.Remove(script.Length - 1, 1) + " ))";
+                script += ")";
                 return script;
             }
 
@@ -202,7 +214,7 @@ namespace APIAlamoAnclaflex.Repositories
                 return value.ToString();
             }
 
-            return "'" + value.ToString() + "'";
+            return "'" + Convert.ToString(value, CultureInfo.CreateSpecificCulture("en-GB")) + "'";
         }
 
         public virtual async Task<ComprobanteResponse> GetTransaccion(string identificador, string table)

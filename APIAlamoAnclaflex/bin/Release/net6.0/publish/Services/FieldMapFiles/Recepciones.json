@@ -78,7 +78,7 @@
             "FixedValue": "ANCLAF02",
             "Function": null
           },
-          
+
           {
             "$type": "APIAlamoAnclaflex.Services.Entities.FieldValue, APIAlamoAnclaflex",
             "Field": "SAR_PD_FECALT",
@@ -248,7 +248,7 @@
             "FixedValue": null,
             "Function": null
           },
-          
+
           {
             "$type": "APIAlamoAnclaflex.Services.Entities.FieldValue, APIAlamoAnclaflex",
             "Field": "SAR_PD_FECALT",

@@ -33,22 +33,8 @@
             "$type": "APIAlamoAnclaflex.Services.Entities.FieldValue, APIAlamoAnclaflex",
             "Field": "SAR_FCRMVH_CIRCOM",
             "PropertyName": null,
-            "FixedValue": null,
-            "Function": {
-              "$type": "APIAlamoAnclaflex.Services.Entities.FieldFunction, APIAlamoAnclaflex",
-              "Name": "Alm_Fnc_Ins_SarFcrmvh_DefinoCircuitoOrigen",
-              "Parameters": {
-                "$type": "System.Collections.Generic.List`1[[APIAlamoAnclaflex.Services.Entities.FunctionParameters, APIAlamoAnclaflex]], mscorlib",
-                "$values": [
-                  {
-                    "Name": "CodigoExterno",
-                    "PropertyName": "MSCodAuxiliarERP1"
-                  }
-                ]
-
-              }
-            }
-
+            "FixedValue": "0300",
+            "Function": null
           },
           {
             "$type": "APIAlamoAnclaflex.Services.Entities.FieldValue, APIAlamoAnclaflex",
@@ -88,7 +74,7 @@
             "FixedValue": "N",
             "Function": null
           },
-          
+
           {
             "$type": "APIAlamoAnclaflex.Services.Entities.FieldValue, APIAlamoAnclaflex",
             "Field": "SAR_FC_FECALT",
@@ -245,6 +231,10 @@
                   {
                     "Name": "CodigoExterno",
                     "PropertyName": "MSCodAuxiliarERP1"
+                  },
+                  {
+                    "Name": "MSArticulo",
+                    "PropertyName": "MSArticulo"
                   }
                 ]
 
@@ -258,7 +248,7 @@
             "FixedValue": null,
             "Function": null
           },
-          
+
           {
             "$type": "APIAlamoAnclaflex.Services.Entities.FieldValue, APIAlamoAnclaflex",
             "Field": "SAR_FC_FECALT",
