@@ -14,6 +14,8 @@ var builder = WebApplication.CreateBuilder(args);
 //Repositorys
 builder.Services.AddScoped<PedidosRepository>();
 builder.Services.AddScoped<RecepcionesRepository>();
+builder.Services.AddScoped<CambioDisponibilidadRepository>();
+builder.Services.AddScoped<AjustesRepository>();
 
 var columnOptions = new ColumnOptions
 {

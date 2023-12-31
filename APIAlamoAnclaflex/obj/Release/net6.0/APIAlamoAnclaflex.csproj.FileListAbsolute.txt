@@ -73,3 +73,5 @@ C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\bin\Release\net6
 C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\bin\Release\net6.0\Serilog.Sinks.PeriodicBatching.dll
 C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\obj\Release\net6.0\APIAlamoAnclaflex.Properties.Resources.resources
 C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\obj\Release\net6.0\APIAlamoAnclaflex.csproj.GenerateResource.cache
+C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\bin\Release\net6.0\Services\FieldMapFiles\Ajustes.json
+C:\Users\ktchu\source\repos\APIAlamoAnclaflex\APIAlamoAnclaflex\bin\Release\net6.0\Services\FieldMapFiles\CambioDisponibilidad.json

@@ -30,11 +30,20 @@ namespace APIAlamoAnclaflex.Repositories
                 if (fieldMap.ParentTable != null)
                 {
                     int index = 0;
-                    foreach (var item in (dynamic)resource.GetType().GetProperty(fieldMap.ParentProperty).GetValue(resource, null))
+                    if (fieldMap.ParentProperty!=null)
+                    {
+                        foreach (var item in (dynamic)resource.GetType().GetProperty(fieldMap.ParentProperty).GetValue(resource, null))
+                        {
+                            index++;
+                            query += ArmoQueryInsertTablaSAR(fieldMap, item, valorIdentificador, index, resource) + ";";
+                        }
+                    }
+                    else
                     {
                         index++;
-                        query += ArmoQueryInsertTablaSAR(fieldMap, item, valorIdentificador, index, resource) + ";";
+                        query += ArmoQueryInsertTablaSAR(fieldMap, resource, valorIdentificador, index, null) + ";";
                     }
+                    
                 }
                 else
                 {
@@ -53,7 +62,7 @@ namespace APIAlamoAnclaflex.Repositories
                         Logger.Information(query);
                         await command.ExecuteNonQueryAsync();
 
-                        //await InsertaCwJmSchedules(jobName);
+                        await InsertaCwJmSchedules(jobName);
                     }
                     catch (SqlException ex)
                     {
@@ -144,6 +153,11 @@ namespace APIAlamoAnclaflex.Repositories
                         return Convert.ToString(value, CultureInfo.CreateSpecificCulture("en-GB"));
                     }
 
+                    if (value is DateTime)
+                    {
+                        DateTime valueDateTime = (DateTime)value;
+                        return FormatStringSql(valueDateTime.ToString("yyyyMMdd"));  
+                    }
                 
                 }
             }
