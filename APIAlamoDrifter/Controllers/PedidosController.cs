@@ -38,6 +38,14 @@ namespace APIAlamoDrifter.Controllers
             string JsonBody = JsonConvert.SerializeObject(payload);
             Logger.Information("{ControllerName} - Body recibido: {JsonBody}", ControllerName, JsonBody);
 
+            if (payload.status != "processing")
+            {
+                response.Add(new ComprobanteResponse(new ComprobanteDTO((string?)payload.id.ToString(), "200", "Recibido, pero no procesado", 
+                    "El pedido se recibio, pero no se lo procesa por no estar en estado processing", null)));
+                return Ok(response);
+            }
+
+
 
             payload.company = payload.billing.company;
             foreach (ItemDTO item in payload.line_items)
@@ -56,7 +64,7 @@ namespace APIAlamoDrifter.Controllers
                     .GetProperty("NumeroComprobante")
                     .GetValue(payload.id), "400", "Error de configuracion", "No se encontro el archivo de configuracion del endpoint", null)));
 
-                return response;
+                return BadRequest(response);
             };
 
 

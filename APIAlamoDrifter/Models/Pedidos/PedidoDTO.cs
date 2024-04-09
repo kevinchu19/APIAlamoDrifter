@@ -8,6 +8,7 @@
         public PedidoBillingDTO billing { get; set; }
         public string? company { get; set; }
         public string? codempSoftland { get; set; }
+        public string? status { get;set; }
 
         //public List<MetaDataDTO> meta_data { get; set; } 
         public ICollection<ItemDTO> line_items { get; set; }

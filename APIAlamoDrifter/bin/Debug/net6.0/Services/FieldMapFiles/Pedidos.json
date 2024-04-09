@@ -48,8 +48,8 @@
           {
             "$type": "APIAlamoDrifter.Services.Entities.FieldValue, APIAlamoDrifter",
             "Field": "SAR_FCRMVH_CODEMP",
-            "PropertyName": null,
-            "FixedValue": "EMP01",
+            "PropertyName": "codempSoftland",
+            "FixedValue": null,
             "Function": null
           },
 
