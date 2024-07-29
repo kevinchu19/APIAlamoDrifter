@@ -60,18 +60,21 @@ namespace APIAlamoDrifter.Repositories
                     try
                     {
                         Logger.Information(query);
-                        await command.ExecuteNonQueryAsync();
+                        var result= await command.ExecuteNonQueryAsync();
+                        Logger.Information($"Resultado de la operacion exitosa: {result.ToString()}");
 
                         await InsertaCwJmSchedules(jobName);
                     }
                     catch (SqlException ex)
                     {
+                        Logger.Error(ex.Message + ex.StackTrace);
                         if (ex.Number == 2627)
                         {
                             return $"Error al generar registracion. El id de operacion ya existe.";
                         }
                         else
                         {
+                            
                             return ex.Message + ex.StackTrace;
                         }
 
